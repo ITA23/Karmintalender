@@ -27,7 +27,7 @@
 					$stmt->bind_param('i', $ersteller_ID);
 					$stmt->execute();
 					// R�ckgabe holen
-					$stmt->bind_result($kalender_ID, $name);
+					$stmt->bind_result($name, $kalender_ID);
 										
 					while ( $stmt->fetch() ) {
 						// echo '<option value="' .$kalender_ID. '">' .$name. '</option>';
