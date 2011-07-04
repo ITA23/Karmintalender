@@ -23,16 +23,15 @@
 							WHERE ersteller_ID = ?";
 					
 					$stmt = $db->prepare($sql);
-					// Statment füllen
+					// Statment fï¿½llen
 					$stmt->bind_param('i', $ersteller_ID);
 					$stmt->execute();
-					// Rückgabe holen
-					$stmt->bind_results();
-					$stmt->fetch();
-					
-					while ($row = $stmt->fetch()) {
-						// echo '<option value="' . $row["kalender_ID"] . '">' . $row["name"] . '</option>';
-						echo $row['name'];
+					// Rï¿½ckgabe holen
+					$stmt->bind_result($kalender_ID, $name);
+										
+					while ( $stmt->fetch() ) {
+						// echo '<option value="' .$kalender_ID. '">' .$name. '</option>';
+						echo $name;
 					}
 				?>
 				<!-- </select> -->
